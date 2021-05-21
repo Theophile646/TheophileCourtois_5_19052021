@@ -1,0 +1,52 @@
+@import "./variables";
+
+
+/* Index */
+#product-list {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 60%;
+    border: 6px solid $primary-color;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: $primary-color;
+    transition: box-shadow 1s;
+    
+    &:hover {
+        box-shadow: grey 0px 5px 15px;
+    }
+    
+    h2 {
+        color: $tertiary-color;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: larger;
+        color: $tertiary-color;
+        span {
+            color: $grey;
+        }
+    }
+
+    img {
+        height: 200px;
+        width: 100%;
+        border-radius: 0 0 34px 34px;
+    }
+
+    
+}

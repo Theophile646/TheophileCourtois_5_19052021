@@ -1,6 +1,7 @@
-@import "index.scss";
-@import "commandValidation.scss";
-@import "product.scss";
-@import "cart.scss";
-@import "layout.scss";
-@import "form.scss";
+@import "./partials/layout";
+@import "./partials/index";
+@import "./partials/commandValidation";
+@import "./partials/product";
+@import "./partials/cart";
+@import "./partials/form";
+@import "./partials/variables";
