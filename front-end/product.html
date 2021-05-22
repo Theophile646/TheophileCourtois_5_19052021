@@ -14,35 +14,42 @@
 </head>
 <body>
     <header>
-        <a url="index.html"><img src="logos/logo-Orinoco.JPG"/></a>
-        <a url="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <a href="index.html"><img src="logos/logo-Orinoco.JPG" alt="logo-Orinoco" class="logo header-logo"/></a>
+        <a href="cart.html"><i class="fas fa-shopping-cart gradient-icon"></i></a>
     </header>
 
     <section class="product">
-        <div class="product-card">
             <div class="product-info">
-                <h2>Camera</h2>
-                <p>Description</p>
-                <p>Price €€</p>
-                <img src="logos/logo-Orinoco.JPG" alt="camera">
+
+                <div class="produc-info__details">
+                    <h2>Camera</h2>
+                    <p>Description</p>
+                    <p>Price €€</p>
+                </div>
+
+                <div class="produc-info__model">
+                    <label for="choose-model">Choissisez votre model :</label><br>
+                    <select name="model" id="choose-model">
+                        <option value="">Choissisez un model</option>
+                        <option value="lense1">lense1</option>
+                        <option value="lense2">lense2</option>
+                        <option value="lense3">lense3</option>
+                    </select>
+                </div>
+
+                <button type="button" class="produc-info__button">Ajouter au panier</button>
+
+
             </div>
 
-            <div class="model">
-                <label for="choose-model">Choissisez votre model :</label>
-                <select name="model" id="choose-model">
-                    <option value="">Choissisez un model</option>
-                    <option value="lense1">lense1</option>
-                    <option value="lense2">lense2</option>
-                    <option value="lense3">lense3</option>
-                </select>
-            </div>
+           
+            <img src="logos/logo-Orinoco.JPG" alt="camera">
 
-            <button type="button">Ajouter au panier</button>
-        </div>
+
     </section>
 
     <footer>
-        <img src="logos/logo-Orinoco.JPG" alt ="logo">
+        <img src="logos/logo-Orinoco.JPG" alt ="logo" class="logo footer-logo">
         <h2>Phrase d'accroche !</h2>
     </footer>
     

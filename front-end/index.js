@@ -24,12 +24,14 @@ function getCameras() {
 
 // Content creation
 function displayCamera (cameras) {
-    document.getElementById("product-list").innerHTML += `<div class="product-container">
-                                                                <h2>${cameras.name}</h2>
-                                                                <p>${cameras.description}</p>
-                                                                <p class="price">${cameras.price} <span class="€">€</span></p>
-                                                                <img src="${cameras.imageUrl}" alt="${cameras.name}">
-                                                                </div>`
+    document.getElementById("product-list").innerHTML += `
+        <a href="./product.html?${cameras._id}">
+        <div class="product-container">
+        <h2>${cameras.name}</h2>
+        <p>${cameras.description}</p>
+        <p class="price">${cameras.price / 100} <span class="€">€</span></p>
+        <img src="${cameras.imageUrl}" alt="${cameras.name}">
+        </div></a>`
 }
 
 
