@@ -22,7 +22,7 @@ function getCameras() {
 }
 
 
-// Content creation
+// HTML Content
 function displayCamera (cameras) {
     document.getElementById("product-list").innerHTML += `
         <a href="./product.html?${cameras._id}">

@@ -10,6 +10,8 @@
 
     <script defer src="https://kit.fontawesome.com/2fe7dc3279.js" crossorigin="anonymous"></script>
     <script defer src="product.js"></script>
+    <script defer src="cartCounter.js"></script>
+
     
 </head>
 <body>
@@ -18,35 +20,13 @@
         <a href="cart.html"><i class="fas fa-shopping-cart gradient-icon"></i></a>
     </header>
 
-    <section class="product">
-            <div class="product-info">
+    <section id="product">
 
-                <div class="produc-info__details">
-                    <h2>Camera</h2>
-                    <p>Description</p>
-                    <p>Price €€</p>
-                </div>
-
-                <div class="produc-info__model">
-                    <label for="choose-model">Choissisez votre model :</label><br>
-                    <select name="model" id="choose-model">
-                        <option value="">Choissisez un model</option>
-                        <option value="lense1">lense1</option>
-                        <option value="lense2">lense2</option>
-                        <option value="lense3">lense3</option>
-                    </select>
-                </div>
-
-                <button type="button" class="produc-info__button">Ajouter au panier</button>
-
-
-            </div>
-
-           
-            <img src="logos/logo-Orinoco.JPG" alt="camera">
-
-
+            
     </section>
+
+    <button type="button" class="product-info__button" id="addToCart">Ajouter au panier</button>
+
 
     <footer>
         <img src="logos/logo-Orinoco.JPG" alt ="logo" class="logo footer-logo">
