@@ -21,16 +21,27 @@
     <section class="cart-summary">
         <h1>Votre panier</h1>
 
-        <div class="product-recap">
-            <div class="cart-product-info">
-            <h2>Camera</h2>
-            <p>Price €€</p>
-            <img src="" alt="camera">
+        <div id="product-recap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supprimer</th>
+                        <th>Image</th>
+                        <th>Nom du produit</th>
+                        <th>Prix</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                    <!-- HTML à utiliser dans le JS -->
+                <tbody id="inject-html"></tbody>
+                    
+            </table>
+
+            <div id="cart-total"></div>
         </div>
 
-        <div class="cart-total">
-            <p>€€</p>
-        </div>
+        
 
     </section>
 
@@ -39,15 +50,16 @@
     <section id="order-form">
         <form>
             <label for="firstName">Prénom :</label>
-            <input type="text" maxlength="10" id="firstName" name="firstName"><br>
+            <input type="text" maxlength="10" id="firstName" name="firstName" required><br>
             <label for="lastName">Nom :</label>
-            <input type="text" id="lastName" name="lastName"><br>
-            <label for="adress">Adress :</label>
-            <input type="text" id="adress" name="adress"><br>
+            <input type="text" id="lastName" name="lastName" required><br>
+            <label for="adress">Adresse :</label>
+            <input type="text" id="adress" name="adress" required pattern="^\d\s.*([a-zA-Z]+( [a-zA-Z]+)+)$"><br>
             <label for="city">Ville :</label>
-            <input type="text" id="city" name="city"><br>
+            <input type="text" id="city" name="city" required pattern="^[a-zA-Z]+$"><br>
             <label for="email">Email :</label>
-            <input type="email" id="email" name="email"><br>
+            <input type="email" id="email" name="email" required><br>
+            <input type="button" id="submit-button" value="Envoyer">
         </form>
 
     </section>

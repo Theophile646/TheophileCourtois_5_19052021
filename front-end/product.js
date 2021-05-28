@@ -89,12 +89,10 @@ function displayCameraDetail (cameraById) {
                         image: cameraById.imageUrl,
                         option: choosenLense
                     }
-                    console.log(productSum);
 
             }
 
             let dataStorage = JSON.parse(localStorage.getItem("productSummary"));
-            console.log(dataStorage)
             
             
                 if (!localStorage.getItem("productSummary")) {
@@ -105,7 +103,6 @@ function displayCameraDetail (cameraById) {
                 } else {
                     dataStorage.push(productSum);
                     localStorage.setItem("productSummary", JSON.stringify(dataStorage))
-                    console.log(dataStorage)
                 }
                 
             });

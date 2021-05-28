@@ -195,4 +195,9 @@ footer a {
   height: 300px;
   margin: 20px;
 }
+
+table img {
+  height: 100px;
+  max-width: 100px;
+}
 /*# sourceMappingURL=main.css.map */
