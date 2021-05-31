@@ -1,8 +1,7 @@
 @import "./variables";
 
 
-/* Product */
-
+// Product
 #product {
     display: flex;
     flex-direction: column;
@@ -31,4 +30,13 @@
         margin: 20px;
 
     }
+}
+
+// Pop-Up
+.popup--hidden {
+    display: none;
+}
+
+.popup--displayed {
+    display: block;
 }

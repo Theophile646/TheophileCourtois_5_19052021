@@ -150,7 +150,6 @@ footer a {
   border-radius: 0 0 34px 34px;
 }
 
-/* Product */
 #product {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,8 +195,24 @@ footer a {
   margin: 20px;
 }
 
+.popup--hidden {
+  display: none;
+}
+
+.popup--displayed {
+  display: block;
+}
+
 table img {
   height: 100px;
   max-width: 100px;
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 1px solid black;
 }
 /*# sourceMappingURL=main.css.map */

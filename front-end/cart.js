@@ -1,7 +1,12 @@
+//---------------------------- Declaring Global Variable--------------------------------------
+
+// let postResult
+
+
+//---------------------------- Cart Page --------------------------------------
 //---------------------------- Handling Cart Summary--------------------------------------
 // get data from localStorage
 let dataFromStorage = JSON.parse(localStorage.getItem("productSummary"));
-console.log(dataFromStorage)
 
 // If Cart is empty display "cart empty" else display products
 if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
@@ -43,9 +48,9 @@ function displayCartTotal () {
 
     for (let object of dataFromStorage) {
         total += object.price / 100;
-        console.log(total)
     }
     document.getElementById("cart-total").innerHTML = `<p>Le montant total de votre panier est de ${total}<span> €</span>.</p>`
+    return total
 }
 
 displayCartTotal ()
@@ -80,6 +85,70 @@ function clickBin () {
 clickBin ()
 
 //---------------------------- Handling Form --------------------------------------
+
+// If input is true when submitting, add the input value into an object 
+
+function checkValid () {
+    let submitButton = document.getElementById("submit-button");
+    let inputs = document.querySelectorAll("form input")
+    let contact = {}
+    let products = []
+    let id
+   
+
+
+    submitButton.addEventListener("click", function (e) {
+        e.preventDefault()
+
+       
+
+        // Create Array containning id from products in Cart
+        for (const productInCart of dataFromStorage) {
+            if (productInCart.hasOwnProperty("identifier")) {
+                id = productInCart["identifier"]
+                products.push(id)
+            }
+        }
+
+
+        
+         // Create object containing data from Form
+         for (let i = 0; i < inputs.length - 1; i++) {
+            if (inputs[i].reportValidity()) {
+                contact[inputs[i].name] = inputs[i].value                
+            }
+
+        }
+
+        let objectToSend = {contact, products}
+
+        // If Form is valid send FormResults and identifierArray (objectToSend) to the server
+        fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            headers: { 
+        'Content-Type': 'application/json' 
+        },
+            body: JSON.stringify(objectToSend)
+
+        })
+        .then(async(res) => {
+            console.log("Request complete! response:", res);
+            let postResult = await res.json();
+            console.log(postResult)
+            localStorage.setItem("order", JSON.stringify(postResult))
+            
+
+          })
+          .then (() => {
+            window.location.replace('commandValidation.html');
+          })
+          
+    })
+
+  
+
+}
+checkValid()
 
 
 
