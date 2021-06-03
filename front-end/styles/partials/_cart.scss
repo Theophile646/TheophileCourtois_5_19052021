@@ -77,19 +77,13 @@ table th:last-child{
 }
 
 // ----------------------------------------Form--------------------------------------
-input{
-    :valid {
-        border: 1px solid black;
-    }
-    :invalid {
-        border: 2px dashed red;
-    }
-}
-
 .validation-form {
     width: 70%;
     margin: 30px auto;
-    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h2 {
         font-size: 1.2em;
         color: $primary-color;
@@ -97,6 +91,11 @@ input{
     form {
         display: flex;
         flex-direction: column;
+
+        input {
+            border-radius: 7px;
+            border: 2px solid $fourth-color;
+        }
     }
 }
 

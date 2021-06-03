@@ -690,18 +690,22 @@ table th:last-child {
   cursor: pointer;
 }
 
-input :valid {
-  border: 1px solid black;
-}
-
-input :invalid {
-  border: 2px dashed red;
-}
-
 .validation-form {
   width: 70%;
   margin: 30px auto;
-  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .validation-form h2 {
@@ -717,6 +721,11 @@ input :invalid {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.validation-form form input {
+  border-radius: 7px;
+  border: 2px solid #4b5e65;
 }
 
 /* if quantity is used, shows the arrows
