@@ -1,12 +1,8 @@
-//---------------------------- Declaring Global Variable--------------------------------------
-
-// let postResult
-
-
 //---------------------------- Cart Page --------------------------------------
 //---------------------------- Handling Cart Summary--------------------------------------
 // get data from localStorage
 let dataFromStorage = JSON.parse(localStorage.getItem("productSummary"));
+console.log(dataFromStorage);
 
 // If Cart is empty display "cart empty" else display products
 if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
@@ -15,7 +11,7 @@ if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
 } else {
     displayCartSummary()
 
-}
+};
 
 
 
@@ -26,34 +22,20 @@ if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
         displayProductDetail(data)
 
     }
-}
+};
 
 // Display product summary
 function displayProductDetail (data) {
     let parentTable = document.querySelector("#inject-html");
     parentTable.innerHTML += `
                     <tr>
-                        <td><i class="fas fa-trash-alt"></i></td>
-                        <td><img src="${data.image}" alt="${data.title}"></td>
                         <td>${data.title}</td>
+                        <td><img src="${data.image}" alt="${data.title}"></td>
                         <td>${data.price /100}<span> €</span></td>
-                        <td>Sum</td>
+                        <td><i class="fas fa-trash-alt"></i></td>
                     </tr>
     `
 };
-
-// Determine Total of cart
-function displayCartTotal () {
-    let total = 0;
-
-    for (let object of dataFromStorage) {
-        total += object.price / 100;
-    }
-    document.getElementById("cart-total").innerHTML = `<p>Le montant total de votre panier est de ${total}<span> €</span>.</p>`
-    return total
-}
-
-displayCartTotal ()
 
 
 // remove product when click on trash bin
@@ -65,24 +47,38 @@ function clickBin () {
         removeButtons[i].addEventListener("click", () => {
 
             //Remove object from the array
-            dataFromStorage.splice(i, 1)
+            dataFromStorage.splice(i, 1);
 
             // Delete product row
-            productRow[i + 1].remove()
+            productRow[i + 1].remove();
 
             // Update local storage
-            localStorage.setItem("productSummary", JSON.stringify(dataFromStorage))
+            localStorage.setItem("productSummary", JSON.stringify(dataFromStorage));
             
             // recalculate Cart Total
             displayCartTotal ()
 
         });
         
-    }
+    };
 
-}
+};
 
-clickBin ()
+clickBin ();
+
+// Determine Total of cart
+function displayCartTotal () {
+    let total = 0;
+
+    for (let object of dataFromStorage) {
+        total += object.price / 100;
+    };
+    document.getElementById("cart-total").innerHTML = `
+    <p>Le montant total de votre panier est de <span>${total} €</span>.</p>`;
+    return total
+};
+
+displayCartTotal ();
 
 //---------------------------- Handling Form --------------------------------------
 
@@ -90,25 +86,25 @@ clickBin ()
 
 function checkValid () {
     let submitButton = document.getElementById("submit-button");
-    let inputs = document.querySelectorAll("form input")
-    let contact = {}
-    let products = []
-    let id
+    let inputs = document.querySelectorAll("form input");
+    let contact = {};
+    let products = [];
+    let id;
    
 
 
     submitButton.addEventListener("click", function (e) {
-        e.preventDefault()
+        e.preventDefault();
 
        
 
         // Create Array containning id from products in Cart
         for (const productInCart of dataFromStorage) {
             if (productInCart.hasOwnProperty("identifier")) {
-                id = productInCart["identifier"]
+                id = productInCart["identifier"];
                 products.push(id)
-            }
-        }
+            };
+        };
 
 
         
@@ -116,9 +112,9 @@ function checkValid () {
          for (let i = 0; i < inputs.length - 1; i++) {
             if (inputs[i].reportValidity()) {
                 contact[inputs[i].name] = inputs[i].value                
-            }
+            };
 
-        }
+        };
 
         let objectToSend = {contact, products}
 
@@ -134,20 +130,18 @@ function checkValid () {
         .then(async(res) => {
             console.log("Request complete! response:", res);
             let postResult = await res.json();
-            console.log(postResult)
             localStorage.setItem("order", JSON.stringify(postResult))
             
 
           })
           .then (() => {
-            window.location.replace('commandValidation.html');
-          })
+            window.location.replace('commandValidation.html')
+          });
           
-    })
+    });
 
-  
+};
 
-}
 checkValid()
 
 

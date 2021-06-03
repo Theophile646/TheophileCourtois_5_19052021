@@ -1,14 +1,14 @@
 // call for global function
-displayCameraList()
+displayCameraList();
 
 // Global function 
 async function displayCameraList () {
-    const cameras = await getCameras()
+    const cameras = await getCameras();
     for (let camera of cameras) {
         displayCamera(camera)
-        }
+        };
     
-}
+};
 
 // Fetch camera list from API
 function getCameras() {
@@ -19,7 +19,7 @@ function getCameras() {
     .then (function(cameras) {
         return cameras
        })
-}
+};
 
 
 // HTML Content

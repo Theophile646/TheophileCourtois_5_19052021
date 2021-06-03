@@ -1,20 +1,13 @@
-/*
-//Déclaration de variables
-let addToCartButton = document.getElementById("addToCart");
-let cartCounterButton = document.querySelectorAll(".fa-shopping-cart")
+// Display number of product on top of the cart icon for home page & product page
+function cartCounterProduct () {
+    let cartCounterNumber = localStorage.productSummary;
+    cartCounterNumber = JSON.parse(cartCounterNumber).length;
+    
+    let cartCounter = document.getElementById("cartCounter");
+    
+    cartCounter.innerHTML = `
+                    <i class="fas fa-shopping-cart gradient-icon counter-icon"><mark class="counter-style tada">${cartCounterNumber}</mark></i>`
+};
 
-//console.log(cartCounter)
 
-let cartCounterNumber = addToCartButton.addEventListener('click', incrementCartCounter())
-
-function incrementCartCounter () {
-    let cartCounter = [];
-    for (let addToCart of cartCounter) {
-        cartCounter.push(1)
-        return cartCounter.length
-    }
-}
-
-console.log(cartCounterNumber)
-
-*/
+cartCounterProduct();

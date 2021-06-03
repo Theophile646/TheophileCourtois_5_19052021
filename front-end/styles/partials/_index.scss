@@ -1,13 +1,26 @@
 @import "./variables";
 
 
-/* Index */
+
+//h1
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+//Product list
 #product-list {
-    width: 100%;
     margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;    
 
     a {
         text-decoration: none;
+        width: 45%;
+
     }
 }
 
@@ -18,40 +31,37 @@
     justify-content: center;
     margin: auto;
     margin-bottom: 30px;
-    width: 60%;
-    border: 6px solid $primary-color;
-    border-radius: 40px;
+    border: 5px solid $tertiary-color;
+    border-radius: $border-radius;
     cursor: pointer;
-    background-color: $primary-color;
+    background-color: $tertiary-color;
     transition: box-shadow 1s;
+
+
     
     &:hover {
         box-shadow: grey 0px 5px 15px;
     }
     
     h2 {
-        color: $tertiary-color;
+        color: $primary-color;
     }
 
     p {
         text-align: center;
-        color: $grey;
-    }
-
-    .price {
-        font-weight: bold;
-        font-size: larger;
-        color: $tertiary-color;
-        span {
-            color: $grey;
-        }
+        color: $secondary-color;
+        padding: 0 10px;
     }
 
     img {
         height: 200px;
         width: 100%;
-        border-radius: 0 0 34px 34px;
+        border-radius: 0 0 15px 15px;
+        background-clip: border-box;
+        background-color: $fourth-color;
     }
 
     
 }
+
+

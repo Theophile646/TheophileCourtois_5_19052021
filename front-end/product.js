@@ -1,8 +1,8 @@
 // Get queryString
-const id = window.location.search.replace("?", "")
+const id = window.location.search.replace("?", "");
 
 // call for global function
-displayCamera()
+displayCamera();
 
 
 // Global function 
@@ -10,7 +10,7 @@ async function displayCamera () {
     
     const cameraById = await getCameraById()
     return displayCameraDetail (cameraById)
-}
+};
 
 
 
@@ -23,7 +23,7 @@ return fetch(`http://localhost:3000/api/cameras/${id}`)
 .then (function(cameraById) {
     return cameraById
    })
-}
+};
 
 
 
@@ -35,36 +35,36 @@ function displayCameraDetail (cameraById) {
     <div class="product-info">
 
                 <div class="product-info__details">
-                    <h2>${cameraById.name}</h2>
+                    <h1>${cameraById.name}</h1>
                     <p>${cameraById.description}</p>
-                    <p>${cameraById.price / 100} <span class="€">€</span></p>
+                    <p class="price">${cameraById.price / 100} €</p>
                 </div>
 
                 <div class="product-info__model">
-                    <label for="choose-model">Choissisez votre model :</label><br>
+                    <label for="choose-model">Choissisez votre modèle :</label><br>
                     <select name="model" id="choose-model">
-                        <option value="default">Choissisez un model</option>                      
+                        <option value="default">Choissisez un modèle</option>                      
                     </select>
                 </div>
 
                 <img src="${cameraById.imageUrl}" alt="${cameraById.name}">
 
 
-                <button type="button" class="product-info__button" id="addToCart">Ajouter au panier</button>
+                <button type="button" class="button" id="addToCart">Ajouter au panier</button>
 
-            </div>`
+            </div>`;
 
            
 
             // display options
-            let lensesList = cameraById.lenses
+            let lensesList = cameraById.lenses;
             for (let lense of lensesList) {
                 optionsCreation = document.getElementById("choose-model").innerHTML += ` 
                 <option value="${lense}">${lense}</option>`
-                       }
+            };
 
             //change doc title
-            document.title = `${cameraById.name}` 
+            document.title = `${cameraById.name}`;
 
             // get data when adding to cart
             
@@ -72,12 +72,12 @@ function displayCameraDetail (cameraById) {
                 
                 //get selected option
 
-                let choosenLense = document.querySelector("#choose-model").value
+                let choosenLense = document.querySelector("#choose-model").value;
 
                 // Si model = default alors ALERT
 
                 if (choosenLense === "default") {
-                    window.alert("Veuillez selectionner un modèle.")
+                    window.alert("Veuillez selectionner un modèle.");
                 } else {
                 
                      // create object containing data
@@ -90,9 +90,9 @@ function displayCameraDetail (cameraById) {
                         option: choosenLense
                     }
 
-            }
-
-            let dataStorage = JSON.parse(localStorage.getItem("productSummary"));
+            };
+                // Send data to local Storage
+                let dataStorage = JSON.parse(localStorage.getItem("productSummary"));
             
             
                 if (!localStorage.getItem("productSummary")) {
@@ -104,7 +104,33 @@ function displayCameraDetail (cameraById) {
                     dataStorage.push(productSum);
                     localStorage.setItem("productSummary", JSON.stringify(dataStorage))
                 }
-                
+
+                // Update cartCounter
+                cartCounterProduct ();
+
+                // Confirmation Pop-up
+                let popUp = document.getElementById("popup");               
+                let homeButton = document.getElementById("home__button");
+                let cartButton = document.getElementById("cart__button");
+
+                popUp.style.display = "block";            
+
+                homeButton.addEventListener("click", () => {
+                    window.location.replace('index.html')
+                });
+
+                cartButton.addEventListener("click", () => {
+                    window.location.replace('cart.html')
+                });
+
+                window.addEventListener("click", (event) => {
+                    if (event.target == popUp) {
+                        popUp.style.display = "none"
+                        
+                    }
+                });
+
+
             });
 
 

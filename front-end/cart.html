@@ -13,45 +13,48 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="logos/logo-Orinoco.JPG" alt="logo-Orinoco" class="logo header-logo"/></a>
+        <a href="index.html"><img src="logos/logo-orinoco.png" alt="logo-Orinoco" class="logo logo-width"/></a>
         <a href="cart.html"><i class="fas fa-shopping-cart gradient-icon"></i></a>
     </header>
 
-    <div>
-        <a href="index.html">Continuer mes achats</a>
-    </div>
-
-    <!-- Cart summary-->
-    <section class="cart-summary">
-        <h1>Votre panier</h1>
-
-        <div id="product-recap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Supprimer</th>
-                        <th>Image</th>
-                        <th>Nom du produit</th>
-                        <th>Prix</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-
-                    <!-- HTML à utiliser dans le JS -->
-                <tbody id="inject-html"></tbody>
-                    
-            </table>
-
-            <div id="cart-total"></div>
+    <div class="container">
+        <!-- Home button  -->
+        <div class="button__home">
+            <a class="button" href="index.html" alt="Continuer les achats"><i class="fas fa-home"></i></a>
         </div>
 
-        
+        <!-- Cart summary-->
+        <section class="cart-summary">
+            <h1>Votre panier</h1>
 
-    </section>
+            <div id="product-recap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produit</th>
+                            <th></th>
+                            <th>Prix</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                        <!-- HTML à utiliser dans le JS -->
+                    <tbody id="inject-html"></tbody>
+                        
+                </table>
+
+                <div id="cart-total"></div>
+            </div>
+
+            
+
+        </section>
+    </div>
 
 
     <!-- Form -->
-    <section>
+    <section class="validation-form">
+        <h2>Veuillez remplir le formulaire pour valider votre commande</h2>
         <form id="order-form">
             <label for="firstName">Prénom :</label>
             <input type="text" maxlength="20" id="firstName" name="firstName" required><br>
@@ -63,14 +66,13 @@
             <input type="text" id="city" name="city" required><br>
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required><br>
-            <input type="submit" id="submit-button" value="Envoyer">
+            <input type="submit" id="submit-button" value="Valider la commande" required class="button">
         </form>
 
     </section>
 
     <footer>
-        <img src="logos/logo-Orinoco.JPG" alt ="logo" class="logo footer-logo">
-        <h2>Phrase d'accroche !</h2>
+        <img src="logos/logo-orinoco.png" alt ="logo" class="logo-width">
     </footer>
     
     <script src="cart.js"></script>

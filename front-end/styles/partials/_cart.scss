@@ -1,12 +1,127 @@
-table img {
-    height: 100px;
-    max-width: 100px;
+// --------------------------------Cart Summary---------------------
+// Table
+table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+
+    
+    td {
+        text-align: center;
+    }
+
+    thead {
+        background-color: $fourth-color;
+
+        th {        
+            line-height: 2em;
+            color: white;
+        }
+
+    }
+
+
+    tbody tr:nth-child(odd) {
+        background-color: $tertiary-color;
+        border-radius: 0 0 15px 15px;
+    }
+
+    img {
+        height: 100px;
+        min-width: 100%;
+        border-radius: $border-radius;
+        object-fit: cover;
+    }
+}
+// Rounded corner table header
+table th:first-child{
+    border-radius:15px 0 0 0;
+  }
+  
+table th:last-child{
+    border-radius:0 15px 0 0;
 }
 
-input:invalid {
-    border: 2px dashed red;
+.cart-summary {
+    margin: auto;
+    width: 80%;
+    #product-recap {
+        border-radius: $border-radius;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
 }
+
+// Total Price
+#cart-total {
+    background-color: $fourth-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    p {
+        margin: 0;
+        line-height: 2em;
+        color: white;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.fa-trash-alt {
+    color: $fifth-color;
+    cursor: pointer;
+}
+
+// ----------------------------------------Form--------------------------------------
+input{
+    :valid {
+        border: 1px solid black;
+    }
+    :invalid {
+        border: 2px dashed red;
+    }
+}
+
+.validation-form {
+    width: 70%;
+    margin: 30px auto;
+    text-align: justify;
+    h2 {
+        font-size: 1.2em;
+        color: $primary-color;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
   
-input:valid {
-    border: 1px solid black;
+
+
+
+
+
+
+/* if quantity is used, shows the arrows
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
 }
+
+
+#product-recap input {
+    width: 25%;
+    text-align: center;
+}
+*/
+

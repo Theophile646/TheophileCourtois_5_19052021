@@ -12,29 +12,38 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="logos/logo-Orinoco.JPG" alt="logo-Orinoco" class="logo header-logo"/></a>
-        <a href="cart.html"><i class="fas fa-shopping-cart gradient-icon"></i></a>
+        <a href="index.html"><img src="logos/logo-orinoco.png" alt="logo-Orinoco" class="logo logo-width"/></a>
+        <a id="cartCounter" href="cart.html"></a>
     </header>
 
-    <div>
-        <a href="index.html">Continuer mes achats</a>
-    </div>
-
+    <!-- Validation Pop-up -->
     <div id="popup" class="popup--hidden">
-        <div class="popup__title">
-            <h2>Ce produit a bien été ajouté au panier.</h2>
-        </div>
-        <div class="popup__buttons">
-            <a href="index.html">Continuer mes achats</a>
-            <a href="cart.html">Valider ma commande</a>
+        <div class="popup__content">
+            <div class="popup__title">
+                <h2>Ce produit a bien été ajouté au panier.</h2>
+            </div>
+            <div class="popup__buttons">
+                <a href="index.html" id="home__button" class="button">Continuer mes achats</a>
+                <a href="cart.html" id="cart__button" class="button">Valider ma commande</a>
+            </div>
+
         </div>
     </div>
+    
+    <div class="container">
+        <!-- Home button  -->
+        <div class="button__home">
+            <a class="button" href="index.html" alt="Continuer les achats"><i class="fas fa-home"></i></a>
+        </div>
 
-    <section id="product"></section>
+        <!-- Product from JS -->
+
+        <section id="product"></section>
+
+    </div>
 
     <footer>
-        <img src="logos/logo-Orinoco.JPG" alt ="logo" class="logo footer-logo">
-        <h2>Phrase d'accroche !</h2>
+        <img src="logos/logo-orinoco.png" alt ="logo" class="logo-width">
     </footer>
     
 
