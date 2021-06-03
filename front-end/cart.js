@@ -26,6 +26,7 @@ if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
 
 // Display product summary
 function displayProductDetail (data) {
+    console.log(data)
     let parentTable = document.querySelector("#inject-html");
     parentTable.innerHTML += `
                     <tr>

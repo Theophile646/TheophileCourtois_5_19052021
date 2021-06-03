@@ -1,16 +1,16 @@
 @font-face {
   font-family: "YellowTail";
-  src: url("../../fonts/Yellowtail-Regular.otf");
+  src: url("/front-end/fonts/Yellowtail-Regular.otf");
 }
 
 @font-face {
   font-family: "OpenSansBold";
-  src: url("../../fonts/OpenSans-Bold.ttf");
+  src: url("/front-end/fonts/OpenSans-Bold.ttf");
 }
 
 @font-face {
   font-family: "OpenSansLight";
-  src: url("../../fonts/OpenSans-Light.ttf");
+  src: url("/front-end/fonts/OpenSans-Light.ttf");
 }
 
 /* Body */
@@ -400,8 +400,21 @@ h1 {
 }
 
 #validation {
-  width: 70%;
-  margin: auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px auto;
 }
 
 #validation h2 {
@@ -410,6 +423,10 @@ h1 {
 
 #validation span {
   font-weight: bold;
+}
+
+#validation img {
+  width: 100%;
 }
 
 .button__home {

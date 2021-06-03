@@ -8,8 +8,8 @@ displayCamera();
 // Global function 
 async function displayCamera () {
     
-    const cameraById = await getCameraById()
-    return displayCameraDetail (cameraById)
+    const cameraById = await getCameraById();
+    return displayCameraDetail (cameraById);
 };
 
 
@@ -18,10 +18,10 @@ async function displayCamera () {
 function getCameraById() {
 return fetch(`http://localhost:3000/api/cameras/${id}`)
 .then(function (data) {
-    return data.json()
+    return data.json();
 }) 
 .then (function(cameraById) {
-    return cameraById
+    return cameraById;
    })
 };
 
@@ -74,7 +74,7 @@ function displayCameraDetail (cameraById) {
 
                 let choosenLense = document.querySelector("#choose-model").value;
 
-                // Si model = default alors ALERT
+                // If model = default alors ALERT
 
                 if (choosenLense === "default") {
                     window.alert("Veuillez selectionner un modèle.");
@@ -88,10 +88,9 @@ function displayCameraDetail (cameraById) {
                         price: cameraById.price,
                         image: cameraById.imageUrl,
                         option: choosenLense
-                    }
+                    };
 
-            };
-                // Send data to local Storage
+                    // Send data to local Storage
                 let dataStorage = JSON.parse(localStorage.getItem("productSummary"));
             
             
@@ -112,27 +111,31 @@ function displayCameraDetail (cameraById) {
                 let popUp = document.getElementById("popup");               
                 let homeButton = document.getElementById("home__button");
                 let cartButton = document.getElementById("cart__button");
+                popUp.style.display = "block";
 
-                popUp.style.display = "block";            
-
+                // click on button "carry on buying"
                 homeButton.addEventListener("click", () => {
                     window.location.replace('index.html')
                 });
 
+                // click on button "confirm the order"
                 cartButton.addEventListener("click", () => {
                     window.location.replace('cart.html')
                 });
 
+                //click outside of popup will remove it
                 window.addEventListener("click", (event) => {
                     if (event.target == popUp) {
                         popUp.style.display = "none"
                         
-                    }
-                });
-
+                };
 
             });
 
+                    
+        };
 
-            
+    });
+                
 };
+

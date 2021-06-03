@@ -7,9 +7,14 @@ let contactLastName;
 
 // Getting Data from Storage
 let postResultFromLocalStorage = JSON.parse(localStorage.getItem("order"));
+console.log(postResultFromLocalStorage);
 orderId = postResultFromLocalStorage.orderId;
 contactFirstName = postResultFromLocalStorage.contact.firstName;
 contactLastName = postResultFromLocalStorage.contact.lastName;
+
+// Get Image
+let displayImageValidation = postResultFromLocalStorage.products[0].imageUrl;
+console.log(displayImageValidation);
 
 // Recalcultationg Total Price
 function getTotalPrice () {
@@ -29,8 +34,11 @@ getTotalPrice();
 function displayValidation () {
     document.getElementById("validation").innerHTML = `
     <h2>Merci ${contactFirstName} ${contactLastName} pour votre commande</h2>
+    <img src="${displayImageValidation}" alt="camera">
     <p>Le montant total de votre commande est de <span>${totalPrice} €</span>.</p>
     <p>Votre numéro de commande est le <span>${orderId}</span>.</p>`
+
+    localStorage.removeItem('productSummary')
 };
 
 displayValidation ()
