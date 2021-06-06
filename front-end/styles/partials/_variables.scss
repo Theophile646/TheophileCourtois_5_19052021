@@ -1,5 +1,5 @@
 // Colors
-$primary-color: #2f435e;
+$primary-color: #4b5e65;
 $secondary-color: #44566c;
 $tertiary-color: #ececec;
 $fourth-color: #4b5e65;
@@ -9,3 +9,7 @@ $fifth-color: #201b22;
 // Border
 $border : 5px solid $tertiary-color;
 $border-radius: 15px;
+
+// BreakPoint for media queries
+$small-breakpoint: 576px;
+$mid-breakpoint: 768px;

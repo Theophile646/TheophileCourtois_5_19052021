@@ -18,7 +18,7 @@
 
 
 
-/* Body */
+// Body
 body {
     margin: 0;
     padding: 0;
@@ -54,6 +54,10 @@ header {
     }
 }
 
+.without-cart {
+  visibility: hidden;
+}
+
 
 /* Footer */
 
@@ -67,10 +71,14 @@ footer {
     border-top: 3px solid $fourth-color;
     background-color: $tertiary-color;
 
+
+
     
     a {
         cursor: pointer;
     }
+
+  
 }
 
 // logo
@@ -82,7 +90,10 @@ footer {
         }
 }
 .logo-width {
-    width: 30%;
+    width: 40%;
+}
+.logo-footer {
+  width: 20%;
 }
 
 // Price

@@ -21,6 +21,10 @@ if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
         displayProductDetail(data)
 
     }
+
+    //and display total
+    displayCartTotal ();
+
 };
 
 // Display product summary
@@ -34,6 +38,8 @@ function displayProductDetail (data) {
                         <td><i class="fas fa-trash-alt"></i></td>
                     </tr>
     `
+
+    
 };
 
 
@@ -77,79 +83,16 @@ function displayCartTotal () {
     return total
 };
 
-displayCartTotal ();
 
 //---------------------------- Handling Form --------------------------------------
-
-// If input is true when submitting, add the input value into an object 
-/*
-function checkValid () {
-    let submitButton = document.getElementById("submit-button");
-    let inputs = document.querySelectorAll("form input");
-    let contact = {};
-    let products = [];
-    let id;
-   
-
-
-    submitButton.addEventListener("click", function (e) {
-        e.preventDefault();
-
-       
-
-        // --if--Create Array containning id from products in Cart
-        for (const productInCart of dataFromStorage) {
-            if (productInCart.hasOwnProperty("identifier")) {
-                id = productInCart["identifier"];
-                products.push(id)
-            };
-        };
-
-
-        
-         // --if--Create object containing data from Form
-         for (let i = 0; i < inputs.length - 1; i++) {
-            if (inputs[i].reportValidity()) {
-                contact[inputs[i].name] = inputs[i].value                
-            };
-
-        };
-
-        let objectToSend = {contact, products}
-
-        // --If-- Form is valid send FormResults and identifierArray (objectToSend) to the server
-        fetch("http://localhost:3000/api/cameras/order", {
-            method: "POST",
-            headers: { 
-        'Content-Type': 'application/json' 
-        },
-            body: JSON.stringify(objectToSend)
-
-        })
-        .then(async(res) => {
-            console.log("Request complete! response:", res);
-            let postResult = await res.json();
-            localStorage.setItem("order", JSON.stringify(postResult))
-            
-
-          })
-          .then (() => {
-            window.location.replace('commandValidation.html')
-          });
-          
-    });
-
-};
-
-checkValid()
-*/
+//Variable declaration
 let inputs = document.querySelectorAll("form input");
 let submitButton = document.getElementById("submit-button");
 let contact = {};
 let products = [];
 let id;
    
-
+// when "validate order" is clicked, form is checked
 submitButton.addEventListener("click", function(e) {
     e.preventDefault()
     var valid = true;
@@ -160,10 +103,12 @@ submitButton.addEventListener("click", function(e) {
         };
         
     };
+
+    // if it is valid
     if(valid) {
 
         
-        // --if--Create Array containning id from products in Cart
+        // an Array containning id from products in Cart is created
         for (const productInCart of dataFromStorage) {
             if (productInCart.hasOwnProperty("identifier")) {
                 id = productInCart["identifier"];
@@ -171,7 +116,7 @@ submitButton.addEventListener("click", function(e) {
             };
         };
 
-        // --if--Create object containing data from Form
+        // aswell as an object containing data from Form
         for (let i = 0; i < inputs.length - 1; i++) {
             if (inputs[i].reportValidity()) {
                 contact[inputs[i].name] = inputs[i].value                
@@ -181,7 +126,7 @@ submitButton.addEventListener("click", function(e) {
 
         let objectToSend = {contact, products}
 
-        // --If-- Form is valid send FormResults and identifierArray (objectToSend) to the server
+        // Then the formResults and identifierArray (objectToSend) are sent to the server
         fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
             headers: { 

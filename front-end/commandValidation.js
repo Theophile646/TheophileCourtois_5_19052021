@@ -4,13 +4,17 @@ let totalPrice;
 let contactFirstName;
 let contactLastName;
 
+//Function capitalize FirstLetter
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 // Getting Data from Storage
 let postResultFromLocalStorage = JSON.parse(localStorage.getItem("order"));
 console.log(postResultFromLocalStorage);
 orderId = postResultFromLocalStorage.orderId;
-contactFirstName = postResultFromLocalStorage.contact.firstName;
-contactLastName = postResultFromLocalStorage.contact.lastName;
+contactFirstName = capitalizeFirstLetter(postResultFromLocalStorage.contact.firstName);
+contactLastName = capitalizeFirstLetter(postResultFromLocalStorage.contact.lastName);
 
 // Get Image
 let displayImageValidation = postResultFromLocalStorage.products[0].imageUrl;
@@ -33,7 +37,7 @@ getTotalPrice();
 // Display Validation message
 function displayValidation () {
     document.getElementById("validation").innerHTML = `
-    <h2>Merci ${contactFirstName} ${contactLastName} pour votre commande</h2>
+    <h1>Merci ${contactFirstName} ${contactLastName} pour votre commande !</h1>
     <img src="${displayImageValidation}" alt="camera">
     <p>Le montant total de votre commande est de <span>${totalPrice} €</span>.</p>
     <p>Votre numéro de commande est le <span>${orderId}</span>.</p>`

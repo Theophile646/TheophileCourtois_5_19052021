@@ -5,12 +5,12 @@ function cartCounterProduct() {
 
     if (!cartCounterNumber == 0) {
         cartCounterIcon.innerHTML = `
-        <mark class="counter-style tada">${cartCounterNumber}</mark>`
-    }
-}
+        <mark class="counter-style tada">${cartCounterNumber}</mark>`;
+    };
+};
 
 if (localStorage.getItem('productSummary') !== null) {
     cartCounterProduct();
 
-}
+};
 

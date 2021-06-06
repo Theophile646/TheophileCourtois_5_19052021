@@ -1,22 +1,12 @@
 @import "./variables";
 
-
-
-//keep Buying button
-.button__home {
-    margin-left: 20px;
-}
-
-
-
-
 // Product
 #product {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    margin-bottom: 30px;
 
     .product-info {
         display: flex;
@@ -32,6 +22,7 @@
 
         h1 {
             margin-top: 0;
+            margin-bottom: 20px;
             color: $primary-color;
         }
 
@@ -67,7 +58,7 @@
             height: 300px;
             margin: 20px;
             border-radius: $border-radius;
-
+            object-fit: cover;
     
         }
 

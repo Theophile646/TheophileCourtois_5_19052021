@@ -1,4 +1,5 @@
 .button {
+    display: inline;
     text-decoration: none;
     border: 3px solid $primary-color;
     border-radius:  $border-radius;
@@ -12,5 +13,22 @@
     &:hover{
         color: $tertiary-color;
         background-color: $primary-color;
+    }
+
+}
+
+    
+
+//keep Buying button
+.button__home {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    width: 50%;
+    display: inline;
+
+    @media (max-width: $small-breakpoint) {
+        left: 50%;
+        
     }
 }
