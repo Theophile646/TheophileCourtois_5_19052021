@@ -3,6 +3,8 @@
 // get data from localStorage
 let dataFromStorage = JSON.parse(localStorage.getItem("productSummary"));
 
+
+
 // If Cart is empty display "cart empty" else display products
 if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
     document.getElementById("product-recap").innerHTML = "<p>Le panier est vide.</p>";
@@ -63,9 +65,17 @@ function clickBin () {
             // recalculate Cart Total
             displayCartTotal ()
 
+            // If cart is empty display "empty card"
+            if(dataFromStorage.length === 0) {
+                document.getElementById("product-recap").innerHTML = "<p>Le panier est vide.</p>";
+            }
+
         });
         
+        
     };
+
+    
 
 };
 
@@ -104,8 +114,12 @@ submitButton.addEventListener("click", function(e) {
         
     };
 
+    if (dataFromStorage.length === 0) {
+        window.alert("Votre panier est vide, veuillez selectionner un article avant de valider votre commande !")
+    }
+
     // if it is valid
-    if(valid) {
+    if(valid && dataFromStorage.length != 0) {
 
         
         // an Array containning id from products in Cart is created

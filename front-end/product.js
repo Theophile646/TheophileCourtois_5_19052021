@@ -81,7 +81,6 @@ function displayCameraDetail (cameraById) {
                 } else {
                 
                      // create object containing data
-
                     var productSum = {
                         identifier: id,
                         title: cameraById.name,
@@ -115,18 +114,18 @@ function displayCameraDetail (cameraById) {
 
                 // click on button "carry on buying"
                 homeButton.addEventListener("click", () => {
-                    window.location.replace('index.html')
+                    window.location.replace('index.html');
                 });
 
                 // click on button "confirm the order"
                 cartButton.addEventListener("click", () => {
-                    window.location.replace('cart.html')
+                    window.location.replace('cart.html');
                 });
 
                 //click outside of popup will remove it
                 window.addEventListener("click", (event) => {
                     if (event.target == popUp) {
-                        popUp.style.display = "none"
+                        popUp.style.display = "none";
                         
                 };
 
