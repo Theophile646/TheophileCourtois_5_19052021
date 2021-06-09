@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="styles/main.css" />
 
+    <script src="https://kit.fontawesome.com/2fe7dc3279.js" crossorigin="anonymous"></script>
+
+
     
 </head>
 <body>
@@ -18,28 +21,31 @@
         </a>    
     </header>
 
-    <!-- Validation Pop-up -->
-    <div id="popup" class="popup--hidden">
-        <div class="popup__content">
-            <div class="popup__title">
-                <h2>Ce produit a bien été ajouté au panier.</h2>
+    <div class="content" >
+        <!-- Validation Pop-up -->
+        <div id="popup" class="popup--hidden">
+            <div class="popup__content">
+                <div class="popup__title">
+                    <h2>Ce produit a bien été ajouté au panier.</h2>
+                </div>
+                <div class="popup__buttons">
+                    <a href="index.html" id="home__button" class="button">Continuer mes achats</a>
+                    <a href="cart.html" id="cart__button" class="button">Valider ma commande</a>
+                </div>
+
             </div>
-            <div class="popup__buttons">
-                <a href="index.html" id="home__button" class="button">Continuer mes achats</a>
-                <a href="cart.html" id="cart__button" class="button">Valider ma commande</a>
+        </div>
+        
+            <!-- Home button  -->
+            <div class="button__home">
+                <a class="button" href="index.html" alt="Continuer les achats"><i class="fas fa-home"></i></a>
             </div>
 
-        </div>
+            <!-- Product from JS -->
+
+            <section id="product"></section>
+
     </div>
-    
-        <!-- Home button  -->
-        <div class="button__home">
-            <a class="button" href="index.html" alt="Continuer les achats"><i class="fas fa-home"></i></a>
-        </div>
-
-        <!-- Product from JS -->
-
-        <section id="product"></section>
 
 
     <footer>
@@ -49,7 +55,6 @@
 
     <script src="product.js"></script>
     <script src="cartCounter.js"></script>
-    <script src="https://kit.fontawesome.com/2fe7dc3279.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

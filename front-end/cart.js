@@ -66,7 +66,8 @@ function clickBin () {
             displayCartTotal ()
 
             // If cart is empty display "empty card"
-            if(dataFromStorage.length === 0) {
+            console.log(localStorage.getItem("productSummary"));
+            if(!localStorage.getItem("productSummary")) {
                 document.getElementById("product-recap").innerHTML = "<p>Le panier est vide.</p>";
             }
 

@@ -11,14 +11,12 @@ function capitalizeFirstLetter(string) {
 
 // Getting Data from Storage
 let postResultFromLocalStorage = JSON.parse(localStorage.getItem("order"));
-console.log(postResultFromLocalStorage);
 orderId = postResultFromLocalStorage.orderId;
 contactFirstName = capitalizeFirstLetter(postResultFromLocalStorage.contact.firstName);
 contactLastName = capitalizeFirstLetter(postResultFromLocalStorage.contact.lastName);
 
 // Get Image
 let displayImageValidation = postResultFromLocalStorage.products[0].imageUrl;
-console.log(displayImageValidation);
 
 // Recalcultationg Total Price
 function getTotalPrice () {
