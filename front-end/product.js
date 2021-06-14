@@ -50,7 +50,7 @@ function displayCameraDetail (cameraById) {
                 <img src="${cameraById.imageUrl}" alt="${cameraById.name}">
 
 
-                <button type="button" class="button" id="addToCart">Ajouter au panier</button>
+                <button type="button" class="button button--primary" id="addToCart">Ajouter au panier</button>
 
             </div>`;
 

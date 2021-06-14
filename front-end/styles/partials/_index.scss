@@ -1,10 +1,6 @@
 @import "./variables";
-
-
-
 //h1
 h1 {
-    display: flex;
     justify-content: center;
     font-size: 3em;
 }
@@ -48,8 +44,6 @@ h1 {
     cursor: pointer;
     background-color: $tertiary-color;
     transition: box-shadow 1s;
-
-
     
     &:hover {
         box-shadow: grey 0px 5px 15px;
@@ -61,7 +55,6 @@ h1 {
 
     p {
         text-align: center;
-        color: $secondary-color;
         padding: 0 10px;
     }
 
@@ -72,9 +65,7 @@ h1 {
         background-clip: border-box;
         background-color: $fourth-color;
         object-fit: cover;
-
     }
-
     
 }
 

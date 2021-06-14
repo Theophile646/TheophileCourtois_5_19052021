@@ -2,21 +2,19 @@
 
 // Fonts
 @font-face {
-    font-family: "YellowTail";
-    src: url("/front-end/fonts/Yellowtail-Regular.otf");
-  }
+  font-family: "YellowTail";
+  src: url("/front-end/fonts/Yellowtail-Regular.otf");
+}
 
-  @font-face {
-    font-family: "OpenSansBold";
-    src: url("/front-end/fonts/OpenSans-Bold.ttf");
-  }
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("/front-end/fonts/OpenSans-Bold.ttf");
+}
 
-  @font-face {
-    font-family: "OpenSansLight";
-    src: url("/front-end/fonts/OpenSans-Light.ttf");
-  }
-
-
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("/front-end/fonts/OpenSans-Light.ttf");
+}
 
 // Body
 html, body {
@@ -30,33 +28,33 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "OpenSansLight", sans-serif;
-  color: $fifth-color;
+  color: $primary-color;
+
   a {
-      color: $fourth-color;
+    color: inherit;
+  }
+  
+  h1 {
+    font-family: "YellowTail", sans-serif;
+    color: $secondary-color;
+  }
+  
+  h2, h3, h4 {
+    font-family: "OpenSansBold", sans-serif;
+    color: $secondary-color !important;
   }
 }
-
-h1 {
-  font-family: "YellowTail", sans-serif;
-  color: $fourth-color;
-}
-
-h2, h3, h4 {
-  font-family: "OpenSansBold", sans-serif;
-}
-
 
 
 // Header 
 header {
-  background-color: $tertiary-color;
-  border-bottom: 3px solid $fourth-color;
+  background-color: $fourth-color;
   display: flex;
   justify-content: space-around;
   align-items: center;
 
   a {
-      color: $fourth-color;
+      color: $fifth-color;
   }
 }
 
@@ -72,7 +70,6 @@ header {
 
 }
 
-
 footer {
   display: flex;
   flex-direction: column;
@@ -80,8 +77,7 @@ footer {
   align-items: center;
   padding: 20px;
   flex-shrink: 0;
-  border-top: 3px solid $fourth-color;
-  background-color: $tertiary-color;
+  background-color: $fourth-color;
 
   a {
       cursor: pointer;
@@ -106,11 +102,10 @@ footer {
 }
 
 // Price
-
 .price {
-  font-weight: bold;
-  font-size: larger;
-  color: $fifth-color;
+  font-weight:bolder ;
+  font-size: 1.3em;
+  //color: $fifth-color !important;
 }
 
 
@@ -151,7 +146,7 @@ footer {
       border: 2px solid #FFF;
       width: 20px;
       height: 20px;  
-      background-color: #FF6B6B;
+      background-color: $fifth-color !important;
       position: absolute;
       top: -5px;
       left: -10px;

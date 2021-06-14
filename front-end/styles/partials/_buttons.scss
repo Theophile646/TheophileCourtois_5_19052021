@@ -1,34 +1,87 @@
-.button {
-    display: inline;
-    text-decoration: none;
-    border: 3px solid $primary-color;
-    border-radius:  $border-radius;
-    color: $primary-color;
-    padding: 0 5px;
-    font-weight: bold;
-    font-size: 1em;
-    transition: all 400ms;
-    background-color: white;
-
-    &:hover{
-        color: $tertiary-color;
-        background-color: $primary-color;
-    }
-
-}
-
-    
-
 //keep Buying button
-.button__home {
+.button--home {
     position: relative;
     top: 30px;
-    left: 30px;
+    left: 20px;
     width: 50%;
     display: inline;
+    border: 2px solid $secondary-color;
+    padding: 5px;
+    border-radius: $border-radius;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 400ms;
+
+
+
+    &::after {
+        content: 'Accueil';
+        padding: 0 5px;
+        font-weight: bold;
+    }
+
+    &:hover {
+
+    }
+    
+    @media (max-width: $mid-breakpoint) {
+        &::after {
+            content: none;
+            padding-left: 0;
+        }
+        
+    }
 
     @media (max-width: $small-breakpoint) {
         left: 50%;
-        
+        top: 5px;
+       
+    }
+
+    
+}
+
+
+// Button
+.button {
+    line-height: 1.5em;
+    display: inline;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: all 400ms;
+    
+
+}
+
+// Primary Button
+.button--primary {
+background-color: white;
+color: $secondary-color;
+border: 2px solid $secondary-color;
+
+
+        // Primary button Hover
+        &:hover{
+        color: white;
+        background-color: $secondary-color;
     }
 }
+
+// Outlined button
+.button--outlined {
+    border: 2px white solid;
+    color: white;
+    background-color: $tertiary-color;
+
+    // Outlined button Hover
+    &:hover{
+    color: $tertiary-color;
+    background-color: white;
+    }
+}
+
+

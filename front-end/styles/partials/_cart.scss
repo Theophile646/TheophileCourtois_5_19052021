@@ -4,7 +4,7 @@ table {
     table-layout: fixed;
     border-spacing: 0;
     width: 100%;
-
+    font-weight: bold;
     
     td {
         text-align: center;
@@ -16,6 +16,8 @@ table {
         th {        
             line-height: 2em;
             color: white;
+            font-weight: bold;
+            font-size: 1.3em;
         }
 
     }
@@ -31,8 +33,14 @@ table {
         min-width: 100%;
         border-radius: $border-radius;
         object-fit: cover;
+        margin-top: 5px;
+
+        @media (max-width: $small-breakpoint) {
+            display: none;
+        }
     }
 }
+
 // Rounded corner table header
 table th:first-child{
     border-radius:15px 0 0 0;
@@ -63,8 +71,10 @@ table th:last-child{
     border-radius: 0 0 15px 15px;
     p {
         margin: 0;
-        line-height: 2em;
+        font-size: 1.2em;
+        //line-height: 2em;
         color: white;
+        padding: 10px;
         span {
             font-weight: bold;
         }
@@ -79,7 +89,7 @@ table th:last-child{
 // ----------------------------------------Form--------------------------------------
 .validation-form {
     width: 70%;
-    margin: 30px auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,39 +98,53 @@ table th:last-child{
         font-size: 1.2em;
         color: $primary-color;
     }
-    form {
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: bold;
+
+    .validation-form__inputs {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-        input {
-            border-radius: 9px;
-            border: 2px solid $fourth-color;
+        .validation-form__input {
+            flex-basis: 46%;
+            &:last-child{
+                flex-grow: 1;
+            }
+
+
+            input {
+                border-radius: 6px;
+                border: 2px solid $fourth-color;
+                width: 100%;
+    
+            }
+
         }
+
     }
+
+    #submit-button{
+        width: 47%;
+        margin-top: 15px;
+        background-color: $secondary-color;
+        color: white;
+        align-self: flex-start;
+        border-radius: 6px !important;
+
+        &:hover {
+            background-color: white;
+            color: $secondary-color;
+            border: 2px solid $secondary-color;
+        }
+
+    }    
+
 }
-
-
-
-
-  
-
-
-
-
-
-
-/* if quantity is used, shows the arrows
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-
-   opacity: 1;
-
-}
-
-
-#product-recap input {
-    width: 25%;
-    text-align: center;
-}
-*/
 

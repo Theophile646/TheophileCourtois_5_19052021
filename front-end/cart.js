@@ -3,7 +3,7 @@
 // get data from localStorage
 let dataFromStorage = JSON.parse(localStorage.getItem("productSummary"));
 
-
+let total
 
 // If Cart is empty display "cart empty" else display products
 if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
@@ -13,6 +13,7 @@ if (!localStorage.getItem("productSummary") || dataFromStorage == 0){
     displayCartSummary()
 
 };
+
 
 
 
@@ -36,8 +37,8 @@ function displayProductDetail (data) {
                     <tr>
                         <td>${data.title}</td>
                         <td><img src="${data.image}" alt="${data.title}"></td>
-                        <td>${data.price /100}<span> €</span></td>
-                        <td><i class="fas fa-trash-alt"></i></td>
+                        <td class="price">${data.price /100} €</td>
+                        <td><i class="fas fa-trash-alt delete-button"></i></td>
                     </tr>
     `
 
@@ -45,46 +46,93 @@ function displayProductDetail (data) {
 };
 
 
+
+
+/*
 // remove product when click on trash bin
-function clickBin () {
-    let removeButtons = document.querySelectorAll(".fa-trash-alt");
-    let productRow = document.querySelectorAll("tr");
+let removeButtons = document.querySelectorAll(".delete-button");
+let productRow = document.querySelectorAll("tr");
 
-    for (let i = 0; i < removeButtons.length; i++) {
-        removeButtons[i].addEventListener("click", () => {
+removeButtons.forEach((delBtn, i) => {
+    delBtn.addEventListener('click', () => {
+    dataFromStorage.splice(i, 1);
+    localStorage.setItem("productSummary", JSON.stringify(dataFromStorage));
+    //window.location.reload();
+    productRow[i + 1].remove();
+    removeButtons.parentNode.removeChild(delBtn[i])
+    displayCartTotal ()
 
-            //Remove object from the array
-            dataFromStorage.splice(i, 1);
 
-            // Delete product row
+
+  });
+});
+
+*/
+
+
+
+
+
+// --------------------------- delete button not working ------------
+let removeButtons = document.querySelectorAll(".fa-trash-alt");
+let removeButtonsArray = Array.from(removeButtons);
+let productRow = document.querySelectorAll("tr");
+//let productRowArray = Array.from(productRow);
+//let removeTableHead = productRow.shift();
+
+
+for (let i = 0; i < removeButtonsArray.length; i++) {
+    removeButtonsArray[i].addEventListener("click", () => {
+        console.log(i);
+
+
+        if (i >= removeButtonsArray.length) {
+            dataFromStorage.pop()
+            console.log(dataFromStorage)
             productRow[i + 1].remove();
 
-            // Update local storage
-            localStorage.setItem("productSummary", JSON.stringify(dataFromStorage));
-            
-            // recalculate Cart Total
-            displayCartTotal ()
+        }else {
+            //Remove object from the array
+        dataFromStorage.splice(i, 1);
 
-            // If cart is empty display "empty card"
-            console.log(localStorage.getItem("productSummary"));
-            if(!localStorage.getItem("productSummary")) {
-                document.getElementById("product-recap").innerHTML = "<p>Le panier est vide.</p>";
-            }
+        // Delete product row
+        productRow[i + 1].remove();
 
-        });
+        //delet from nodelist
+        removeButtonsArray.splice(i, 1);
+
+        }
+
         
+
+        // Update local storage
+        localStorage.setItem("productSummary", JSON.stringify(dataFromStorage));
         
-    };
+        // recalculate Cart Total
+        displayCartTotal ()
+
+        // If cart is empty display "empty card"
+        console.log(removeButtonsArray);
+
+        if(total === 0) {
+            document.getElementById("product-recap").innerHTML = "<p>Le panier est vide.</p>";
+        }
+
+    });
+
+    
+    
+};
+
+
 
     
 
-};
 
-clickBin ();
 
 // Determine Total of cart
 function displayCartTotal () {
-    let total = 0;
+    total = 0;
 
     for (let object of dataFromStorage) {
         total += object.price / 100;

@@ -15,7 +15,6 @@
         align-items: center;
         width: 60%;
         text-align: center;
-        border: $border;
         border-radius: $border-radius;
         padding: 30px;
         background-color: $tertiary-color;
@@ -23,31 +22,32 @@
         h1 {
             margin-top: 0;
             margin-bottom: 20px;
-            color: $primary-color;
         }
 
 
         &__model {
             label {
-                color : $fourth-color;
+                color : $secondary-color;
                 font-weight: bold;
+                font-size: 1.1em;
             }
 
             select {
                 border-radius: $border-radius;
-                border: $primary-color 2px solid;
-                color: $fifth-color;
+                border: $secondary-color 2px solid;
+                color: $secondary-color;
+                font-size: 1.1em;
                 outline: none;
                 cursor: pointer;
                 transition: all 300ms;
 
                 &:hover {
-                    background-color: $primary-color;
-                    color: $tertiary-color;
+                    background-color: $secondary-color;
+                    color: white;
                 }
                 &:focus {
-                    background-color: $primary-color;
-                    color: $tertiary-color;
+                    background-color: $secondary-color;
+                    color: white;
                 }
             }
 
@@ -66,10 +66,7 @@
             padding: 3px 7px;
         }
 
-
-
     }
-
     
 }
 
@@ -78,7 +75,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 200px; /* Location of the box */
+    padding-top: 250px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -86,6 +83,9 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    @media (max-width: $small-breakpoint){
+        padding-top: 150px;
+    }
 }
 
 .popup--displayed {
@@ -95,7 +95,6 @@
 
 .popup__content {
     position: relative;
-    background-color: #fefefe;
     margin: auto;
     padding: 0;
     border-radius: $border-radius;
@@ -107,16 +106,21 @@
     animation-duration: 0.4s;
 
     .popup__title {
-        background-color: $primary-color;
-        color: $tertiary-color;
+        background-color: $fourth-color;
         border-radius: 15px 15px 0 0;
         padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        text-align: center;
+
+        
         h2 {
-            margin: 0;
+            color: white !important;
+            font-size: 2em;
+
+            @media (max-width: $small-breakpoint){
+                font-size: 1.3em;
+            }
         }
+
 
     }
     .popup__buttons {
@@ -124,6 +128,19 @@
         justify-content: space-around;
         align-items: center;
         padding: 15px;
+        background-color: $tertiary-color;
+        
+    border-radius: 0 0 15px 15px;
+
+
+        @media (max-width: $mid-breakpoint){
+            flex-direction: column;
+
+            a{
+                margin: 5px 0;
+                font-size: 1em;
+            }
+        }
 
     }
 
@@ -131,7 +148,6 @@
 
 
 // PopUP Animation
-
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
