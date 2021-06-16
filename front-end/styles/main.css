@@ -57,6 +57,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 50px;
 }
 
 header a {
@@ -135,6 +136,10 @@ footer a {
           align-items: flex-start;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+#cartCounter {
+  margin-right: 5px;
 }
 
 #cartCounter:hover > i > mark {
@@ -346,12 +351,10 @@ footer a {
 }
 
 h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
   font-size: 3em;
 }
 
@@ -424,6 +427,7 @@ h1 {
 
 .product-container h2 {
   color: #2E4433;
+  text-align: center;
 }
 
 .product-container p {
@@ -793,7 +797,6 @@ form {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  font-size: bold;
 }
 
 form .validation-form__inputs {

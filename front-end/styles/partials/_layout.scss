@@ -52,6 +52,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  min-height: 50px;
 
   a {
       color: $fifth-color;
@@ -120,6 +121,10 @@ footer {
 }
 
 // Cart Counter
+#cartCounter {
+  margin-right: 5px;
+}
+
 #cartCounter:hover > i > mark {
   animation-name: bounce;
   animation-name: tada;
