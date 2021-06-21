@@ -47,52 +47,23 @@ function displayProductDetail (data) {
 
 
 
-
-/*
-// remove product when click on trash bin
-let removeButtons = document.querySelectorAll(".delete-button");
-let productRow = document.querySelectorAll("tr");
-
-removeButtons.forEach((delBtn, i) => {
-    delBtn.addEventListener('click', () => {
-    dataFromStorage.splice(i, 1);
-    localStorage.setItem("productSummary", JSON.stringify(dataFromStorage));
-    //window.location.reload();
-    productRow[i + 1].remove();
-    removeButtons.parentNode.removeChild(delBtn[i])
-    displayCartTotal ()
-
-
-
-  });
-});
-
-*/
-
-
-
-
-
-// --------------------------- delete button not working ------------
+// --------------------------- delete button ------------
 let removeButtons = document.querySelectorAll(".fa-trash-alt");
 let removeButtonsArray = Array.from(removeButtons);
 let productRow = document.querySelectorAll("tr");
-//let productRowArray = Array.from(productRow);
-//let removeTableHead = productRow.shift();
+
 
 
 for (let i = 0; i < removeButtonsArray.length; i++) {
     removeButtonsArray[i].addEventListener("click", () => {
-        console.log(i);
 
 
         if (i >= removeButtonsArray.length) {
             dataFromStorage.pop()
-            console.log(dataFromStorage)
             productRow[i + 1].remove();
 
         }else {
-            //Remove object from the array
+        //Remove object from the array
         dataFromStorage.splice(i, 1);
 
         // Delete product row
