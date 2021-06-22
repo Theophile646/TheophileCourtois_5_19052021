@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
-    <link rel="shortcut icon" type="image/ico" href="../favicon.ico.png"/>
+    <link rel="shortcut icon" type="image/ico" href="../../favicon.ico.png"/>
 
 
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script src="https://kit.fontawesome.com/2fe7dc3279.js" crossorigin="anonymous"></script>
 
 
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="logos/logo-orinoco.png" alt="logo-Orinoco" class="logo logo-width"/></a>
-        <a href="cart.html" class="without-cart">
+        <a href="./index.html"><img src="../logos/logo-orinoco.png" alt="logo-Orinoco" class="logo logo-width"/></a>
+        <a href="./cart.html" class="without-cart">
             <i class="fas fa-shopping-cart gradient-icon"></i>
         </a>
     </header>
@@ -23,7 +24,7 @@
     <div class="content">
 
     <!-- Home button  -->
-    <a class="button--home button--primary" href="index.html"><i class="fas fa-home"></i></a>
+    <a class="button--home button--primary" href="./index.html"><i class="fas fa-home"></i></a>
 
 
         <!-- Cart summary-->
@@ -61,19 +62,19 @@
                 <div class="validation-form__inputs">
                     <div class="validation-form__input">
                         <label for="firstName">Prénom :</label><br>
-                        <input type="text" id="firstName" name="firstName" maxlength="20" pattern ="^[a-zA-Z àâçéèêëîïôûùüÿñæœ \-]+$" required>
+                        <input type="text" id="firstName" name="firstName" maxlength="20" pattern ="^[a-zA-Zàâçéèêëîïôûùüÿñæœ]+[ |-]?[a-zA-Zàâçéèêëîïôûùüÿñæœ]+$" required>
                     </div>
                     <div class="validation-form__input">
                         <label for="lastName">Nom :</label><br>
-                        <input type="text" id="lastName" name="lastName" maxlength="50" pattern ="^[a-zA-Z àâçéèêëîïôûùüÿñæœ \-]+$" required>
+                        <input type="text" id="lastName" name="lastName" maxlength="50" pattern ="^[a-zA-Zàâçéèêëîïôûùüÿñæœ]+[ |-]?[a-zA-Zàâçéèêëîïôûùüÿñæœ]+$" required>
                     </div>
                     <div class="validation-form__input">
                         <label for="address">Adresse :</label><br>
-                        <input type="text" id="address" name="address" maxlength="70" required>
+                        <input type="text" id="address" name="address" maxlength="70" pattern="^[a-zA-ZZàâçéèêëîïôûùüÿñæœ0-9_]+( [a-zZàâçéèêëîïôûùüÿñæœA-Z0-9_]+)*$" required>
                     </div>
                     <div class="validation-form__input">
                         <label for="city">Ville :</label><br>
-                        <input type="text" id="city" name="city" maxlength="50" pattern ="^[a-zA-Z àâçéèêëîïôûùüÿñæœ \-]+$" required>
+                        <input type="text" id="city" name="city" maxlength="50" pattern ="^[a-zA-Zàâçéèêëîïôûùüÿñæœ]+[ |-]?[a-zA-Zàâçéèêëîïôûùüÿñæœ]+$" required>
                     </div>
                     <div class="validation-form__input">
                         <label for="email">Email :</label><br>
@@ -87,11 +88,10 @@
     </div>
 
     <footer>
-        <img src="logos/logo-orinoco.png" alt ="logo" class="logo-footer">
+        <img src="../logos/logo-orinoco.png" alt ="logo" class="logo-footer">
     </footer>
     
-    <script src="cart.js"></script>
-    <script src="https://kit.fontawesome.com/2fe7dc3279.js" crossorigin="anonymous"></script>
+    <script src="../JS/cart.js"></script>
 
 </body>
 </html>
