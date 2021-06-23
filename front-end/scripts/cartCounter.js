@@ -11,6 +11,5 @@ function cartCounterProduct() {
 
 if (localStorage.getItem('productSummary') !== null) {
     cartCounterProduct();
-
 };
 

@@ -6,8 +6,7 @@ async function displayCameraList () {
     const cameras = await getCameras();
     for (let camera of cameras) {
         displayCamera(camera)
-        };
-    
+    };    
 };
 
 // Fetch camera list from API
@@ -18,7 +17,7 @@ function getCameras() {
     }) 
     .then (function(cameras) {
         return cameras
-       })
+    });
 };
 
 
@@ -26,12 +25,13 @@ function getCameras() {
 function displayCamera (cameras) {
     document.getElementById("product-list").innerHTML += `
         <a href="./product.html?${cameras._id}">
-        <div class="product-container">
-        <h2>${cameras.name}</h2>
-        <p>${cameras.description}</p>
-        <p class="price">${cameras.price / 100} <span class="€">€</span></p>
-        <img src="${cameras.imageUrl}" alt="${cameras.name}">
-        </div></a>`
-}
+            <div class="product-container">
+                <h2>${cameras.name}</h2>
+                <p>${cameras.description}</p>
+                <p class="price">${cameras.price / 100} <span class="€">€</span></p>
+                <img src="${cameras.imageUrl}" alt="${cameras.name}">
+            </div>
+        </a>`
+};
 
 
