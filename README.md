@@ -17,7 +17,13 @@ Github repo : TheophileCourtois_5_19052021
 
 ## Make it works
 
-After cloning the repository, make sure to run "node server" in the terminal. Then, open index.html in your browser and explore !
+After cloning the repository, make sure to run in the terminal :
+```
+npm install
+cd back-end
+node server 
+```
+Then, open index.html in your browser and explore !
 
 ## Author
 
